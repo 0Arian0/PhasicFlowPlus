@@ -24,9 +24,7 @@ Version-1.0 is compatible with PhasicFlow-v-1.0 and OpenFOAM-v24. You need to [i
 
     ```bash
     cd ~/PhasicFlow
-    wget https://github.com/PhasicFlow/PhasicFlowPlus/archive/refs/heads/main.zip
-    unzip -q main.zip
-    mv PhasicFlowPlus-main/ PhasicFlowPlus
+    wget -qO- https://github.com/PhasicFlow/PhasicFlowPlus/archive/refs/tags/v-1.0.tar.gz | tar -xvz
     # Note:
     #   Instead of using wget, you could directly clone it in director ~/PhasicFlow
     #   use the command: git clone https://github.com/PhasicFlow/PhasicFlowPlus.git  
@@ -39,7 +37,7 @@ Version-1.0 is compatible with PhasicFlow-v-1.0 and OpenFOAM-v24. You need to [i
     #   First activate OpenFOAM-v2412 (choose the command that matches your installation)
     #   1- pre-built: source /usr/lib/openfoam/openfoam2412/etc/bashrc
     #   2- source pack : source $HOME/OpenFOAM-v2412/OpenFOAM-v2412/etc/bashrc
-    cd ~/PhasicFlow/PhasicFlowPlus
+    cd ~/PhasicFlow/PhasicFlowPlus-v-1.0
     ./Allwmake
     ```
 
