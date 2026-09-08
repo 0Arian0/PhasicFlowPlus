@@ -16,6 +16,13 @@ couplingSystem/unresolved/turbulence/alphaTurbulentTransportModels.C
 
 couplingSystem/unresolved/unresolvedCouplingSystem/unresolvedCouplingSystem.C
 couplingSystem/unresolved/momentumSphereUnresolvedCouplingSystem/momentumSphereUnresolvedCouplingSystem.C
+
+couplingSystem/unresolved/momentumSphereUnresolvedCouplingSystem/thermalMomentumSphereUnresolvedCouplingSystem.C
+
+couplingSystem/unresolved/momentumSphereUnresolvedCouplingSystem/
+
+
+
 couplingSystem/unresolved/momentumGrainUnresolvedCouplingSystem/momentumGrainUnresolvedCouplingSystem.C
 
 couplingSystem/unresolved/distributions/distribution/distributionBase.C
@@ -36,6 +43,10 @@ couplingSystem/unresolved/porosity/porosityCellDistribution/porosityCellDistribu
 
 couplingSystem/unresolved/interaction/momentumInteraction/momentumInteraction/momentumInteraction.C
 
+couplingSystem/unresolved/interaction/heatInteraction/heatInteraction.C
+
+
+
 couplingSystem/unresolved/interaction/solidAveraging/solidAveraging/solidAveraging.C
 couplingSystem/unresolved/interaction/solidAveraging/particle/particleSolidAveraging.C
 couplingSystem/unresolved/interaction/solidAveraging/distribution/distributionSolidAveraging.C
@@ -44,6 +55,13 @@ couplingSystem/unresolved/interaction/fluidAveraging/fluidAveraging/fluidAveragi
 couplingSystem/unresolved/interaction/fluidAveraging/cell/cellFluidAveraging.C
 couplingSystem/unresolved/interaction/fluidAveraging/interpolate/interpolateFluidAveraging.C
 couplingSystem/unresolved/interaction/fluidAveraging/distribution/distributionFluidAveraging.C
+
+couplingSystem/unresolved/interaction/heatTransfer/heatTransfer/heatTransfer.C
+couplingSystem/unresolved/interaction/heatTransfer/sphereHeatTransfer/sphereHeatTransfers.C
+couplingSystem/unresolved/interaction/heatTransfer/heatTransferClosures/RanzMarshall.C
+couplingSystem/unresolved/interaction/heatTransfer/heatTransferClosures/noneHeatTransfer.C
+
+
 
 couplingSystem/unresolved/interaction/drag/drag/drag.C
 couplingSystem/unresolved/interaction/drag/sphereDrag/sphereDrags.C
@@ -54,10 +72,6 @@ couplingSystem/unresolved/interaction/drag/dragClosures/ErgunWenYu.C
 couplingSystem/unresolved/interaction/drag/dragClosures/Rong.C
 couplingSystem/unresolved/interaction/drag/dragClosures/Beetstra.C
 couplingSystem/unresolved/interaction/drag/dragClosures/noneDrag.C
-
-couplingSystem/unresolved/interaction/virtualMass/virtualMass/virtualMass.C
-couplingSystem/unresolved/interaction/virtualMass/none/noneVirtualMass.C
-couplingSystem/unresolved/interaction/virtualMass/constantCoeffVirtualMass/constantCoeffVirtualMass.C
 
 couplingSystem/unresolved/interaction/lift/lift/lift.C
 couplingSystem/unresolved/interaction/lift/none/none.C
