@@ -58,7 +58,6 @@ Licence:
 #include "procCMFields.hpp"
 #include "drag.hpp"
 #include "lift.hpp"
-#include "virtualMass.hpp"
 #include "fluidAveraging.hpp"
 #include "solidAveraging.hpp"
 #include "PCM.hpp"
@@ -88,9 +87,6 @@ private:
 
     /// Pointer to the lift force model
     uniquePtr<lift>            lift_;
-    
-    /// Pointer to the virtual mass force model
-    uniquePtr<virtualMass>     virtualMass_;
 
     /// Pointer to the fluid property averaging model (e.g., fluid velocity at particles)
     uniquePtr<fluidAveraging>  fluidAveraging_;
@@ -113,6 +109,13 @@ public:
     momentumInteraction(
         const unresolvedCouplingSystem& uCS,
         const porosity& prsty);
+        
+        /// @brief Get the fluid velocity averaging object (Added for thermal coupling)
+    inline const fluidAveraging& fluidVelAveraging() const { return *fluidAveraging_; }
+
+    /// @brief Get the solid velocity averaging object (Added for thermal coupling)
+    inline const solidAveraging& solidVelAveraging() const { return *solidAveraging_; }
+
 
     /// Destructor
     virtual ~momentumInteraction() = default;
@@ -136,13 +139,6 @@ public:
     Foam::tmp<Foam::volVectorField> liftForce()const
     {
         return lift_->liftForce();
-    }
-
-    /// Returns the virtual mass force field acting on particles
-    inline
-    Foam::tmp<Foam::volVectorField> virtualMassForce()const
-    {
-        return virtualMass_->virtualMassForce();
     }
 
     /// Returns a const reference to the porosity field
