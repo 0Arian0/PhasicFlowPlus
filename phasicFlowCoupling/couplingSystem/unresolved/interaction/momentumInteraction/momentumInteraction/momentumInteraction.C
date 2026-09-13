@@ -78,7 +78,7 @@ momentumInteraction::momentumInteraction
         INFORMATION<<"Cell distribution is active."<<END_INFO;
     }
     
-    if(momentumExchangeDistribute_)
+    if(!momentumExchangeDistribute_)
     {
         noDistribution_ = makeUnique<PCM>(uCS.cMesh(), uCS.centerMass());
     }
@@ -121,7 +121,7 @@ void momentumInteraction::calculateCoupling
         *fluidAveraging_,
         *solidAveraging_,
         porosity_.particleDiameter(),
-        momentumExchangeDistribute_ ? noDistribution_() : uCS().distribution(),
+        momentumExchangeDistribute_ ? uCS().distribution():noDistribution_(),
         fluidForce);
 
     lift_->calculateLiftForceTorque(
